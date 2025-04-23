@@ -1,4 +1,4 @@
-import { useLoadGoogleMaps } from '../../hooks/useLoadGoogleMaps';
+import { useLoadGoogleMaps } from '../../../hooks/useLoadGoogleMaps';
 
 export default function CoupleHomePage() {
   useLoadGoogleMaps(); // ✅ Load script once on mount
