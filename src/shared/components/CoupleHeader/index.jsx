@@ -1,7 +1,7 @@
-// src/shared/components/CoupleHeader/index.jsx
 import React, { useState } from 'react';
 import { Dropdown, Button, LocationField, DatePicker } from '../';
 import { ReactComponent as ZinniaLogo } from '../../../assets/zinnia-logo.svg';
+import { useLoadGoogleMaps } from '../../../hooks/useLoadGoogleMaps';
 import {
   FaShoppingCart,
   FaBell,
@@ -15,6 +15,7 @@ export default function CoupleHeader({ isLoggedIn = false, onSearch = () => {} }
   const [vendorType, setVendorType] = useState('All vendors');
   const [location, setLocation] = useState('');
   const [date, setDate] = useState(null);
+  const isMapsReady = useLoadGoogleMaps();
 
   return (
     <header className="w-full px-4 py-5 bg-white border-b border-slate-300 flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0">
@@ -34,7 +35,9 @@ export default function CoupleHeader({ isLoggedIn = false, onSearch = () => {} }
         </div>
 
         <div className="w-full max-w-[320px]">
-          <LocationField value={location} onChange={setLocation} />
+          {isMapsReady && (
+            <LocationField value={location} onChange={setLocation} />
+          )}
         </div>
 
         <div className="w-full max-w-[200px]">
