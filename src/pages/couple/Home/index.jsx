@@ -1,4 +1,8 @@
+import { useLoadGoogleMaps } from '@/hooks/useLoadGoogleMaps';
+
 export default function CoupleHomePage() {
+  useLoadGoogleMaps(); // ✅ Load script once on mount
+
   return (
     <>
       <h1 className="text-xl font-[Literata] text-slate-700 mb-4">
