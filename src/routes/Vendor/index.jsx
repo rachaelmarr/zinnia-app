@@ -5,11 +5,13 @@ import Inbox from '../../pages/vendor/Inbox/index.jsx';
 
 export default function VendorRoutes() {
   return (
-    <ShellVendor>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/inbox" element={<Inbox />} />
-      </Routes>
-    </ShellVendor>
+    <Routes>
+      {/* Wrap vendor pages in the layout shell */}
+      <Route element={<ShellVendor />}>
+        <Route index element={<Dashboard />} /> {/* matches /vendor */}
+        <Route path="inbox" element={<Inbox />} /> {/* matches /vendor/inbox */}
+        <Route path="dashboard" element={<Dashboard />} /> {/* matches /vendor/dashboard */}
+      </Route>
+    </Routes>
   );
 }
