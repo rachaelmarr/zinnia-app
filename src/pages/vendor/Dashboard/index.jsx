@@ -1,5 +1,5 @@
 import React from 'react';
-import VendorHeader from '@/shared/components/VendorHeader';
+import VendorHeader from '../../../shared/components/VendorHeader';
 
 export default function VendorDashboard() {
   return (
