@@ -1,8 +1,9 @@
-import OnboardingSteps from '@/components/OnboardingSteps';
-import NewBookingsCard from '@/components/NewBookingsCard';
-import RevenueCard from '@/components/RevenueCard';
-import MyServicesCard from '@/components/MyServicesCard';
-import MyCalendarCard from '@/components/MyCalendarCard';
+import React from 'react';
+import OnboardingSteps from '../../../components/OnboardingSteps';
+import NewBookingsCard from '../../../components/NewBookingsCard';
+import RevenueCard from '../../../components/RevenueCard';
+import MyServicesCard from '../../../components/MyServicesCard';
+import MyCalendarCard from '../../../components/MyCalendarCard';
 
 export default function VendorDashboard() {
   return (
