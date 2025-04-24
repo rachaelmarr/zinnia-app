@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import VendorHeader from '../../shared/components/VendorHeader';
 import VendorSidebar from '../VendorSidebar';
 
-
 export default function ShellVendor() {
   return (
     <div className="min-h-screen bg-[#F5F5F5] flex">
