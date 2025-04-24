@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as ZinniaLogo } from '../../../assets/zinnia-logo.svg';
-import { FaBell } from 'react-icons/fa';
+import { FaBell, FaRegCommentDots, FaUserCircle } from 'react-icons/fa';
 
 export default function VendorHeader({ isLoggedIn = false }) {
   return (
@@ -11,14 +11,20 @@ export default function VendorHeader({ isLoggedIn = false }) {
       </div>
 
       {/* Actions */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 text-slate-600">
         {isLoggedIn ? (
           <>
-            <FaBell className="text-slate-600 w-5 h-5 hover:text-[#2F7685] active:text-[#124058] cursor-pointer transition-colors" />
-            <img
-              src="https://placehold.co/24x24"
-              alt="Vendor avatar"
-              className="w-6 h-6 rounded-full"
+            <FaRegCommentDots
+              className="w-5 h-5 cursor-pointer hover:text-[#2E7684] active:text-[#124058] transition-colors"
+              aria-label="Inbox"
+            />
+            <FaBell
+              className="w-5 h-5 cursor-pointer hover:text-[#2E7684] active:text-[#124058] transition-colors"
+              aria-label="Notifications"
+            />
+            <FaUserCircle
+              className="w-6 h-6 text-slate-600 hover:text-[#2E7684] active:text-[#124058] cursor-pointer transition-colors"
+              aria-label="Account"
             />
           </>
         ) : (
