@@ -1,14 +1,19 @@
-import React from 'react';
+import OnboardingSteps from '@/components/OnboardingSteps';
+import NewBookingsCard from '@/components/NewBookingsCard';
+import RevenueCard from '@/components/RevenueCard';
+import MyServicesCard from '@/components/MyServicesCard';
+import MyCalendarCard from '@/components/MyCalendarCard';
 
 export default function VendorDashboard() {
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-[Literata] text-slate-700 mb-4">Vendor Dashboard</h1>
-      <p className="text-slate-600 font-[Montserrat]">
-        Welcome! Here's a snapshot of your business, new inquiries, and recent activity.
-      </p>
-
-      {/* Dashboard cards or components go here */}
-    </main>
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="col-span-2">
+        <OnboardingSteps stepsCompleted={0} />
+      </div>
+      <MyCalendarCard />
+      <NewBookingsCard />
+      <RevenueCard />
+      <MyServicesCard />
+    </div>
   );
 }
