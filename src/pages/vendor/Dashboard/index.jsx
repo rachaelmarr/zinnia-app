@@ -14,7 +14,7 @@ export default function VendorDashboard() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
       <div className="col-span-2">
-        <OnboardingSteps stepsCompleted={0} />
+        <OnboardingSteps stepsCompleted={1} vendorName="Amal" />
       </div>
 
       <MyCalendarCard
@@ -23,19 +23,13 @@ export default function VendorDashboard() {
         bookedDates={[4, 12, 23]}
         onManageClick={() => console.log('Go to availability settings')}
       />
-      <OnboardingSteps
-  stepsCompleted={1}
-  vendorName="Amal"
-/>
-
-<RevenueCard
-  revenueTotal={25840}
-  revenueByMonth={[2000, 3800, 4200, 5000, 2700, 2900, 2400, 840]}
-/>
 
       <NewBookingsCard bookings={sampleBookings} />
 
-      <RevenueCard />
+      <RevenueCard
+        revenueTotal={25840}
+        revenueByMonth={[2000, 3800, 4200, 5000, 2700, 2900, 2400, 840]}
+      />
 
       <MyServicesCard
         serviceCount={2}
