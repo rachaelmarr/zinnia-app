@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '@/components'; // Assuming Euphoria Button
-// import { Icons } from '@/components/Icons'; // For future icons
+import Button from '../Button'; // ← if it's a default export
+
 
 const allSteps = [
   {

@@ -1,9 +1,10 @@
 import React from 'react';
-import OnboardingSteps from '../../../components/OnboardingSteps';
-import NewBookingsCard from '../../../components/NewBookingsCard';
-import RevenueCard from '../../../components/RevenueCard';
-import MyServicesCard from '../../../components/MyServicesCard';
-import MyCalendarCard from '../../../components/MyCalendarCard';
+import OnboardingSteps from '../../../shared/components/OnboardingSteps';
+import RevenueCard from '../../../shared/components/RevenueCard';
+import MyServicesCard from '../../../shared/components/MyServicesCard';
+import MyCalendarCard from '../../../shared/components/MyCalendarCard';
+import NewBookingsCard from '../../../shared/components/NewBookingsCard';
+
 
 export default function VendorDashboard() {
   const sampleBookings = [

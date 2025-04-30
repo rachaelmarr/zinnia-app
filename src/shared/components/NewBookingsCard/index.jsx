@@ -1,6 +1,11 @@
 // src/components/NewBookingsCard.jsx
 import React from 'react';
-import { Icons } from '@/components/Icons'; // Assuming this exists in your icon system
+import { FiCalendar } from 'react-icons/fi';
+<div className="flex items-center gap-2 text-sm text-slate-600 font-[Montserrat] tracking-tight">
+  <FiCalendar className="w-4 h-4 text-slate-400" />
+  You don’t have any bookings to confirm.
+</div>
+
 
 export default function NewBookingsCard({ bookings = [] }) {
   const hasBookings = bookings.length > 0;
@@ -19,7 +24,7 @@ export default function NewBookingsCard({ bookings = [] }) {
         </ul>
       ) : (
         <div className="flex items-center gap-2 text-sm text-slate-600 font-[Montserrat] tracking-tight">
-          <Icons.Calendar className="w-4 h-4 text-slate-400" />
+          <FiCalendar className="w-4 h-4 text-slate-400" />
           You don’t have any bookings to confirm.
         </div>
       )}
