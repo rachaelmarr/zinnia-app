@@ -1,12 +1,13 @@
-// src/components/OnboardingSteps.jsx
 import React from 'react';
+import { Button } from '@/components'; // Assuming Euphoria Button
+// import { Icons } from '@/components/Icons'; // For future icons
 
-const steps = [
+const allSteps = [
   {
     title: 'Create your listing',
     description: 'Create your listing and add services',
     actionLabel: 'Create listing',
-    action: () => {}, // wire this to routing/action later
+    action: () => {},
   },
   {
     title: 'Set your availability',
@@ -28,32 +29,34 @@ const steps = [
   },
 ];
 
-export default function OnboardingSteps({ stepsCompleted = 0 }) {
-  if (stepsCompleted === steps.length) return null;
+export default function OnboardingSteps({ stepsCompleted = 0, vendorName = 'there' }) {
+  const incompleteSteps = allSteps.slice(stepsCompleted);
+
+  if (stepsCompleted === allSteps.length) return null;
 
   return (
-    <div className="bg-white rounded-2xl p-5 w-full max-w-2xl flex flex-col gap-11">
+    <div className="bg-white rounded-2xl p-5 w-full max-w-2xl flex flex-col gap-11 shadow-sm">
       {/* Header */}
       <div className="flex flex-col gap-1">
-        <span className="text-xs text-slate-500 font-[Jost]">Welcome Ted Lasso!</span>
+        <span className="text-xs text-slate-500 font-[Montserrat]">Welcome {vendorName}!</span>
         <h2 className="text-3xl font-[Literata] text-slate-600 font-semibold leading-[48px]">
-          {stepsCompleted}/{steps.length} steps completed
+          {stepsCompleted}/{allSteps.length} steps completed
         </h2>
         <p className="text-sm text-slate-600 font-[Montserrat]">
           Once your profile is complete, customers can book you.
         </p>
       </div>
 
-      {/* Step List */}
+      {/* Incomplete Steps */}
       <div className="flex flex-col gap-6">
-        {steps.map((step, index) => (
+        {incompleteSteps.map((step, index) => (
           <div
             key={index}
             className="flex justify-between items-center border-b border-slate-300 pb-5"
           >
             <div className="flex gap-4 items-start">
               <div className="p-2 rounded-full outline outline-1 outline-slate-500">
-                {/* Placeholder icon block */}
+                {/* Placeholder icon box */}
                 <div className="w-7 h-10 bg-slate-600" />
               </div>
               <div>
@@ -65,12 +68,9 @@ export default function OnboardingSteps({ stepsCompleted = 0 }) {
                 </div>
               </div>
             </div>
-            <button
-              onClick={step.action}
-              className="px-3 py-2 bg-slate-600 text-neutral-50 text-sm font-medium font-[Montserrat] rounded-3xl"
-            >
+            <Button size="sm" onClick={step.action}>
               {step.actionLabel}
-            </button>
+            </Button>
           </div>
         ))}
       </div>
