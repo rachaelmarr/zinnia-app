@@ -13,12 +13,15 @@ export default function VendorDashboard() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-      <OnboardingSteps
-        stepsCompleted={1}
-        vendorName="Christine"
-        className="xl:col-span-2"
-      />
+      {/* OnboardingSteps spans 2 columns */}
+      <div className="xl:col-span-2">
+        <OnboardingSteps
+          stepsCompleted={1}
+          vendorName="Christine"
+        />
+      </div>
 
+      {/* Calendar (1 column by default) */}
       <MyCalendarCard
         monthLabel="April 2025"
         daysInMonth={30}
