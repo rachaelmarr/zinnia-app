@@ -5,7 +5,6 @@ import MyServicesCard from '../../../shared/components/MyServicesCard';
 import MyCalendarCard from '../../../shared/components/MyCalendarCard';
 import NewBookingsCard from '../../../shared/components/NewBookingsCard';
 
-
 export default function VendorDashboard() {
   const sampleBookings = [
     "Smith Wedding – Oct 12",
@@ -14,9 +13,11 @@ export default function VendorDashboard() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-      <div className="col-span-2">
-        <OnboardingSteps stepsCompleted={1} vendorName="Amal" />
-      </div>
+      <OnboardingSteps
+        stepsCompleted={1}
+        vendorName="Christine"
+        className="xl:col-span-2"
+      />
 
       <MyCalendarCard
         monthLabel="April 2025"
