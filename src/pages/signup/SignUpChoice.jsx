@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // 🖼️ Replace these with your actual file paths
 import coupleRest from '../../../assets/illustration/couple_rest.svg';
-import coupleSelected from '../../../assets/illustration/couple_active.svg';
+import coupleSelected from '../../../assets/illustration/couple_selected.svg';
 import vendorRest from '../../../assets/illustration/vendor_rest.svg';
-import vendorSelected from '../../../assets/illustration/vendor_active.svg';
+import vendorSelected from '../../../assets/illustration/vendor_selected.svg';
 
 export default function SignUpChoice() {
   const [selected, setSelected] = useState(null);
