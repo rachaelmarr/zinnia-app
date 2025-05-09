@@ -4,7 +4,8 @@ import VendorRoutes from './routes/Vendor/index.jsx';
 import CoupleRoutes from './routes/Couple/index.jsx';
 import './styles/global.css';
 import { BrowserRouter } from 'react-router-dom';
-import SignUpChoice from '@/pages/signup/SignUpChoice';
+import SignUpChoice from './pages/signup/SignUpChoice';
+
 
 <BrowserRouter>
   <App />
